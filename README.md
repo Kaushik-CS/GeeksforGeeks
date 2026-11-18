@@ -25,7 +25,7 @@ _Last updated: 2026-11-11_
 
 Synced automatically by SolveBase.
 
-**Total solved: 8**
+**Total solved: 9**
 
 ## Codeforces
 
@@ -75,13 +75,13 @@ Solutions organized by difficulty rating.
 
 Solutions organized by difficulty level.
 
-**Solved: 8**
+**Solved: 9**
 
 | Difficulty | Solved |
 | --- | --- |
-| [Easy](./geeksforgeeks/Easy) | 3 |
+| [Easy](./geeksforgeeks/Easy) | 4 |
 | [Medium](./geeksforgeeks/Medium) | 5 |
 
 
-_Last updated: 2026-11-17_
+_Last updated: 2026-11-18_
 <!-- /cf-sync -->
