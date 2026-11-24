@@ -3,21 +3,20 @@ class Solution:
     def findPairs(self, arr):
         n = len(arr)
         mp = {}
+        ans = None
 
         for i in range(n):
             for j in range(i + 1, n):
                 s = arr[i] + arr[j]
 
                 if s in mp:
-                    a, b = mp[s]
+                    for a, b in mp[s]:
+                        if b < i:
+                            candidate = [a, b, i, j]
 
-                    if b < i:
-                        return [a, b, i, j]
+                            if ans is None or candidate < ans:
+                                ans = candidate
 
-                else:
-                    mp[s] = (i, j)
+                mp.setdefault(s, []).append((i, j))
 
-        # Check overlapping pairs by retaining alternative pairs
-        # is necessary, so use the complete pair approach below.
-
-        return [-1, -1, -1, -1]
+        return ans if ans is not None else [-1, -1, -1, -1]
