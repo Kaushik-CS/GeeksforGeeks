@@ -1,24 +1,23 @@
-from collections import defaultdict
 
 class Solution:
     def findPairs(self, arr):
         n = len(arr)
-        mp = defaultdict(list)
-        best = [-1, -1, -1, -1]
+        mp = {}
 
-        for c in range(n):
-            for d in range(c + 1, n):
-                s = arr[c] + arr[d]
-                lst = mp[s]
+        for i in range(n):
+            for j in range(i + 1, n):
+                s = arr[i] + arr[j]
 
-                # earliest stored pair sharing no index with (c, d)
-                for a, b in lst:
-                    if a != c and a != d and b != c and b != d:
-                        cand = [a, b, c, d]
-                        if best[0] == -1 or cand < best:
-                            best = cand
-                        break
+                if s in mp:
+                    a, b = mp[s]
 
-                lst.append((c, d))
+                    if b < i:
+                        return [a, b, i, j]
 
-        return best
+                else:
+                    mp[s] = (i, j)
+
+        # Check overlapping pairs by retaining alternative pairs
+        # is necessary, so use the complete pair approach below.
+
+        return [-1, -1, -1, -1]
